@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import { AppBar, Badge, IconButton, InputBase, Toolbar, Typography } from '@material-ui/core';
@@ -60,6 +61,13 @@ const styles = theme => ({
             },
         },
     },
+    link: {
+        color: '#fff',
+        textDecoration: 'none',
+        '&:hover': {
+            color: '#ffff00'
+        }
+    },
 });
 
 class Navbar extends Component {
@@ -70,7 +78,9 @@ class Navbar extends Component {
             <div className={classes.root}>
                 <AppBar position="fixed" className={classes.navbar}>
                     <Toolbar>
-                        <Typography className={classes.title} variant="h6" color="inherit" noWrap>Shopping Cart</Typography>
+                        <Link to="/" className={classes.link}>
+                            <Typography className={classes.title} variant="h6" color="inherit" noWrap>Shopping Cart</Typography>
+                        </Link>
                         <div className={classes.grow} />
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>
@@ -84,12 +94,13 @@ class Navbar extends Component {
                                 }}
                             />
                         </div>
-
-                        <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-                            <Badge badgeContent={this.props.cartCount} color="secondary">
-                                <ShoppingCart />
-                            </Badge>
-                        </IconButton>
+                        <Link to="/cart" className={classes.link}>
+                            <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+                                <Badge badgeContent={this.props.cartCount} color="secondary">
+                                    <ShoppingCart />
+                                </Badge>
+                            </IconButton>
+                        </Link>
                     </Toolbar>
                 </AppBar>
             </div>

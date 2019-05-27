@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, MenuItem, TextField, Typography } from '@material-ui/core';
 import ShoppingCart from '@material-ui/icons/ShoppingCart'
@@ -37,7 +38,6 @@ class Item extends Component {
 
     render(){
         const {item, classes} = this.props;
-        // console.log(this.state.amount)
 
         const handleChange = e => {
             this.setState({
@@ -49,13 +49,15 @@ class Item extends Component {
             <Grid item md={3} sm={6}>
                 <Card className={classes.cardItem}>
                     <CardActionArea>
-                        <CardMedia 
-                            component="img"
-                            alt="image"
-                            height="140"
-                            image="https://dummyimage.com/250x250/858585/fff"
-                            title="sample image"
-                        />
+                        <Link to={`/item/${item.id}`}>
+                            <CardMedia 
+                                component="img"
+                                alt="image"
+                                height="140"
+                                image="https://dummyimage.com/250x250/858585/fff"
+                                title="sample image"
+                            />
+                        </Link>
                     </CardActionArea>
                     <CardContent>
                         <Typography variant="h5" component="h2">
@@ -98,10 +100,6 @@ class Item extends Component {
         );
     }
 }
-
-// const mapStateToProps = state => {
-//     cart: state.cart
-// }
 
 const mapDispatchToProps = dispatch => ({
     onAddItemToCart: (item, itemQty) => dispatch(actionCreators.addToCart({item, qty: itemQty})),

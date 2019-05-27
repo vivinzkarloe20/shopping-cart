@@ -1,18 +1,26 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import ItemList from './components/items/ItemList';
+import Cart from './components/cart/Cart';
+import ItemInfo from './components/items/ItemInfo';
 import Navbar from './components/layout/Navbar';
 import { CssBaseline, Grid } from '@material-ui/core';
 
+
 const App = () => {
     return(
-        <React.Fragment>
-            <CssBaseline />
+        <Router>
             <Navbar />
+            <CssBaseline />
             <Grid container>
-                <ItemList />
+                <Switch>
+                    <Route exact path="/" component={ItemList}></Route>
+                    <Route exact path="/item/:id" component={ItemInfo}></Route>
+                    <Route exact path="/cart" component={Cart}></Route>
+                </Switch>
             </Grid>
-        </React.Fragment>
+        </Router>
     );
 }
 
