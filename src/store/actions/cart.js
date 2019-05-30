@@ -7,9 +7,10 @@ export const addToCart = (data) => {
     };
 };
 
-export const removeToCart = () => {
+export const removeFromCart = (id) => {
     return {
-        type: actionTypes.REMOVE_TO_CART
+        type: actionTypes.REMOVE_TO_CART,
+        payload: id
     };
 };
 

@@ -3,17 +3,25 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 import { makeStyles } from '@material-ui/styles';
-import { Button, Grid, MenuItem, TextField, Typography } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { Button, Grid, MenuItem, Select, Typography } from '@material-ui/core';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import * as actionCreators from '../../store/actions/index';
 
+const theme = createMuiTheme({
+    spacing: 2
+})
 
-const styles = makeStyles(theme => ({
+const styles = makeStyles(({
     wrapper: {
         marginTop: 'auto',
         display: 'flex',
         justifyContent: 'center',
+    },
+    select: {
+        width: 'auto',
+        margin: theme.spacing(2),
     }
 })); 
 
@@ -25,7 +33,6 @@ for(let i = 1; i <= 5; i++){
 
 const ItemInfo = (props) => {
     const [amount, setAmount] = useState(0);
-
     const classes = styles();
     const { item } = props
 
@@ -34,15 +41,12 @@ const ItemInfo = (props) => {
     }
 
     const itemInfo = item ? (
-        <React.Fragment>
-            <Typography>{item.name}</Typography>
+        <div className={classes.itemWrapper}>
+            <Typography variant="h5">{item.name}</Typography>
             <Typography>${item.price}</Typography>
             <hr/>
-            <TextField
-                select
-                id="outlined-adornment-amount"
-                className={classes.textField}
-                variant="outlined"
+            <Select
+                className={classes.select}
                 label="Qty"
                 value={amount}
                 onChange={handleChange}
@@ -52,16 +56,15 @@ const ItemInfo = (props) => {
                         {option.label}
                     </MenuItem>
                 ))}
-            </TextField>
+            </Select>
             <Button size="small" color="primary" onClick={() => {
-                this.props.onAddItemToCart(item, amount);
+                props.onAddItemToCart(item, amount);
                 setAmount(0);
                 }}>
                 <ShoppingCart/>
                 Add to Cart
             </Button>
-        
-        </React.Fragment>
+        </div>
         
     ) : (<p>none</p>);
     return (
@@ -72,7 +75,7 @@ const ItemInfo = (props) => {
                     Return to Items
                 </Typography>
             </Link>
-            <Grid container spacing={40} className={classes.wrapper}>
+            <Grid container className={classes.wrapper}>
                 {itemInfo}
             </Grid>
         </React.Fragment>

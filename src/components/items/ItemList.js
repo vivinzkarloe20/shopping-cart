@@ -7,8 +7,8 @@ import Item from './Item';
 
 const styles = makeStyles(theme => ({
     wrapper: {
-        marginLeft: '15%',
-        marginRight: '15%',
+        marginLeft: '10%',
+        marginRight: '10%',
         marginTop: 'auto',
     }
 })); 
@@ -28,7 +28,7 @@ const ItemList = (props) => {
     )
 
     return(
-        <Grid container spacing={40} className={classes.wrapper}>
+        <Grid container spacing={2} className={classes.wrapper}>
             {itemList}
         </Grid>
     );

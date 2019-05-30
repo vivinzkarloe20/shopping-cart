@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Badge, IconButton, InputBase, Toolbar, Typography } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
+import { AppBar, Badge, IconButton, Toolbar, Typography } from '@material-ui/core';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 
 const styles = makeStyles(theme => ({
@@ -23,25 +22,6 @@ const styles = makeStyles(theme => ({
         [theme.breakpoints.up('sm')]: {
             display: 'block',
         }
-    },
-    search: {
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing(1),
-            width: 'auto',
-        },
-    },
-    searchIcon: {
-        width: theme.spacing(9),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
     },
     inputRoot: {
         color: 'inherit',
@@ -71,7 +51,6 @@ const styles = makeStyles(theme => ({
 }));
 
 const Navbar = (props) => {
-    // const { classes } = this.props;
     const classes= styles();
     return(
         <div className={classes.root}>
@@ -81,18 +60,6 @@ const Navbar = (props) => {
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>Shopping Cart</Typography>
                     </Link>
                     <div className={classes.grow} />
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon />
-                        </div>
-                        <InputBase
-                            placeholder="Search…"
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }}
-                        />
-                    </div>
                     <Link to="/cart" className={classes.link}>
                         <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
                             <Badge badgeContent={props.cartCount} color="secondary">

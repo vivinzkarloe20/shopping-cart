@@ -2,20 +2,27 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, MenuItem, TextField, Typography } from '@material-ui/core';
+import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, MenuItem, Select, Typography } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core/styles'
 import ShoppingCart from '@material-ui/icons/ShoppingCart'
 import { makeStyles } from '@material-ui/styles';
-import * as actionCreators from '../../store/actions/index'
+import * as actionCreators from '../../store/actions/index';
 
-const styles = makeStyles(theme => ({
+const theme = createMuiTheme({
+    spacing: 2
+})
+
+const styles = makeStyles(({
     cardContent: {
         display: 'flex',
     },
     cardActions: {
         marginLeft: '10px',
     },
-    textField: {
-        width: 'auto',
+    select: {
+        // width: 'auto',
+        height: 'auto',
+        margin: theme.spacing(4),
     },
     cardItem: {
         margin: '10px'
@@ -61,11 +68,8 @@ const Item = props => {
                 </CardContent>
                 <div className={classes.cardContent}>
                     <CardActions className={classes.cardActions}>
-                        <TextField
-                            select
-                            id="outlined-adornment-amount"
-                            className={classes.textField}
-                            variant="outlined"
+                        <Select
+                            className={classes.select}
                             label="Qty"
                             value={amount}
                             onChange={handleChange}
@@ -75,7 +79,7 @@ const Item = props => {
                                     {option.label}
                                 </MenuItem>
                             ))}
-                        </TextField>
+                        </Select>
                         <Button size="small" color="primary" onClick={() => {
                             props.onAddItemToCart(item, amount);
                             setAmount(0);
