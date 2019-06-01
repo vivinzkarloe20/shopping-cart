@@ -96,7 +96,7 @@ const Cart = (props) => {
                             <TableCell align="right">{cartItem.qty}</TableCell>
                             <TableCell align="right">${cartItem.price}</TableCell>
                             <TableCell align="right">${cartItem.subtotal.toFixed(2)}</TableCell>
-                            <TableCell align="right"><Button onClick={() => onRemoveFromCart(cartItem.id)}>X</Button></TableCell>
+                            <TableCell align="right"><Button onClick={() => onRemoveFromCart(cartItem)}>X</Button></TableCell>
                             </TableRow>
                         ))) : 
                         (<TableRow>

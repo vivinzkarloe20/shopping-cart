@@ -7,10 +7,10 @@ export const addToCart = (data) => {
     };
 };
 
-export const removeFromCart = (id) => {
+export const removeFromCart = (item) => {
     return {
         type: actionTypes.REMOVE_TO_CART,
-        payload: id
+        payload: item
     };
 };
 
