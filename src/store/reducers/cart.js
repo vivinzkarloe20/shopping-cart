@@ -37,8 +37,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 cart: updatedCart
             }
-        case actionTypes.CLEAR_CART:
-            return state;
+        case actionTypes.CHECKOUT:
+            return initialState;
         default:
             return state;
     }

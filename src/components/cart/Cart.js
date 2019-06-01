@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { makeStyles } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles'
-import { Box, Button, Grid, Table, TableBody, TableCell, TableHead, TableRow, Paper, Typography } from '@material-ui/core';
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, Table, TableBody, TableCell, TableHead, TableRow, Paper, Typography } from '@material-ui/core';
 import * as actionCreators from '../../store/actions/index';
 
 const theme = createMuiTheme({
@@ -33,13 +33,47 @@ const useStyles = makeStyles(({
 const Cart = (props) => {  
     const classes = useStyles();
     const { cartCheckout } = props;
+    const [toggleCheckout, setToggleCheckout] = useState(false)
 
     const onRemoveFromCart = (id) => {
         props.removeFromCart(id);
     }
 
+    const handleClose = () => {
+        setToggleCheckout(false)
+    }
+
+    const handleSubmit = () => {
+        props.history.push('/');
+        alert('You have successfully checked out! Thanks for shopping.');
+        props.checkout();
+    }
+
     return (
         <Grid container spacing={5} className={classes.wrapper}>
+            <div>
+                <Dialog
+                    open={toggleCheckout}
+                    onClose={handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                >
+                    <DialogTitle id="alert-dialog-title">{"Checkout Confirmation"}</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            Are you sure you want to checkout now?
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                    <Button onClick={handleClose} color="primary">
+                        No
+                    </Button>
+                    <Button onClick={handleSubmit} color="primary" autoFocus>
+                        Yes
+                    </Button>
+                    </DialogActions>
+                </Dialog>
+            </div>
             <Grid item md={9} xs={12}>
             <Paper className={classes.root}>
                 <Table className={classes.table}>
@@ -81,7 +115,7 @@ const Cart = (props) => {
                         <Box variant="h5">Total: </Box>
                         <Box className={classes.total} variant="h6">${cartCheckout.totalPrice.toFixed(2)}</Box>
                     </Box>
-                    <Button>
+                    <Button variant="contained" color="primary" onClick={() => setToggleCheckout(true)}>
                         <Typography>
                             Confirm checkout
                         </Typography>
@@ -98,6 +132,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
     removeFromCart: (id) => dispatch(actionCreators.removeFromCart(id)),
+    checkout: () => dispatch(actionCreators.checkout()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

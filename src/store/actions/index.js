@@ -1,5 +1,5 @@
 export {
     addToCart,
     removeFromCart,
-    clearCart,
+    checkout,
 } from './cart';

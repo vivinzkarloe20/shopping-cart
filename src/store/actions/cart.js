@@ -14,8 +14,8 @@ export const removeFromCart = (id) => {
     };
 };
 
-export const clearCart = () => {
+export const checkout = () => {
     return {
-        type: actionTypes.CLEAR_CART
+        type: actionTypes.CHECKOUT
     };
 };
