@@ -48,7 +48,7 @@ const Item = props => {
         <Grid item md={3} sm={6}>
             <Card className={classes.cardItem}>
                 <CardActionArea>
-                    <Link to={`/item/${item.id}`}>
+                    <Link to={`shopping-cart/item/${item.id}`}>
                         <CardMedia 
                             component="img"
                             alt="image"

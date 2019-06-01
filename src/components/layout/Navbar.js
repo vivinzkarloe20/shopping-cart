@@ -60,7 +60,7 @@ const Navbar = (props) => {
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>Shopping Cart</Typography>
                     </Link>
                     <div className={classes.grow} />
-                    <Link to="/cart" className={classes.link}>
+                    <Link to="/shopping-cart/cart" className={classes.link}>
                         <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
                             <Badge badgeContent={props.cartCount} color="secondary">
                                 <ShoppingCart />

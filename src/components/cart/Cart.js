@@ -44,9 +44,14 @@ const Cart = (props) => {
     }
 
     const handleSubmit = () => {
-        props.history.push('/shopping-cart');
-        alert('You have successfully checked out! Thanks for shopping.');
-        props.checkout();
+        if(cartCheckout.totalQty > 0) {
+            props.history.push('/shopping-cart');
+            alert('You have successfully checked out! Thanks for shopping.');
+            props.checkout();
+        }else{
+            alert('You cannot checkout when the cart is empty.');
+            setToggleCheckout(false);
+        }
     }
 
     return (

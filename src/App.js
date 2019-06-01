@@ -16,8 +16,8 @@ const App = () => {
             <Grid container>
                 <Switch>
                     <Route exact path="/shopping-cart" component={ItemList}></Route>
-                    <Route exact path="/item/:id" component={ItemInfo}></Route>
-                    <Route exact path="/cart" component={Cart}></Route>
+                    <Route exact path="/shopping-cart/item/:id" component={ItemInfo}></Route>
+                    <Route exact path="/shopping-cart/cart" component={Cart}></Route>
                 </Switch>
             </Grid>
         </Router>

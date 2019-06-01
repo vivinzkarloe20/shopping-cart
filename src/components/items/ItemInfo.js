@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { makeStyles } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
-import { Button, Grid, MenuItem, Select, Typography } from '@material-ui/core';
+import { Button, Fab, Grid, MenuItem, Select, Typography } from '@material-ui/core';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import * as actionCreators from '../../store/actions/index';
@@ -22,6 +22,12 @@ const styles = makeStyles(({
     select: {
         width: 'auto',
         margin: theme.spacing(2),
+    },
+    backButton: {
+        position: 'fixed',
+        bottom: 0,
+        left: 1,
+        margin: '25px'
     }
 })); 
 
@@ -69,11 +75,10 @@ const ItemInfo = (props) => {
     ) : (<p>none</p>);
     return (
         <React.Fragment>
-            <Link to="/">
-                <Typography>
-                <ArrowBack/>
-                    Return to Items
-                </Typography>
+            <Link to="/shopping-cart">
+                <Fab variant="contained" color="secondary" className={classes.backButton}>
+                    <ArrowBack/>
+                </Fab>
             </Link>
             <Grid container className={classes.wrapper}>
                 {itemInfo}
