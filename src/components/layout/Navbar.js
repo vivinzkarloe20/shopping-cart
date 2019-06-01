@@ -56,7 +56,7 @@ const Navbar = (props) => {
         <div className={classes.root}>
             <AppBar position="fixed" className={classes.navbar}>
                 <Toolbar>
-                    <Link to="/" className={classes.link}>
+                    <Link to="/shopping-cart" className={classes.link}>
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>Shopping Cart</Typography>
                     </Link>
                     <div className={classes.grow} />

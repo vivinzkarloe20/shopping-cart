@@ -44,7 +44,7 @@ const Cart = (props) => {
     }
 
     const handleSubmit = () => {
-        props.history.push('/');
+        props.history.push('/shopping-cart');
         alert('You have successfully checked out! Thanks for shopping.');
         props.checkout();
     }
