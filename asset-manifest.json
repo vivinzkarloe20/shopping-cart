@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/shopping-cart/static/js/main.1a662887.chunk.js",
-    "main.js.map": "/shopping-cart/static/js/main.1a662887.chunk.js.map",
+    "main.js": "/shopping-cart/static/js/main.e0a5e769.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.e0a5e769.chunk.js.map",
     "runtime~main.js": "/shopping-cart/static/js/runtime~main.60a85d2f.js",
     "runtime~main.js.map": "/shopping-cart/static/js/runtime~main.60a85d2f.js.map",
     "static/js/2.65b4d4f0.chunk.js": "/shopping-cart/static/js/2.65b4d4f0.chunk.js",
     "static/js/2.65b4d4f0.chunk.js.map": "/shopping-cart/static/js/2.65b4d4f0.chunk.js.map",
     "index.html": "/shopping-cart/index.html",
-    "precache-manifest.f8f93b8bd2cd24488e32991d308b089d.js": "/shopping-cart/precache-manifest.f8f93b8bd2cd24488e32991d308b089d.js",
+    "precache-manifest.ce8d14c742e24c3e88b7ab31f34f4adc.js": "/shopping-cart/precache-manifest.ce8d14c742e24c3e88b7ab31f34f4adc.js",
     "service-worker.js": "/shopping-cart/service-worker.js"
   }
 }
