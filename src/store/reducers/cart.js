@@ -34,10 +34,12 @@ const reducer = (state = initialState, action) => {
         case actionTypes.REMOVE_TO_CART:
             const updatedCart = state.cart.filter(item => item.id !== action.payload.id);
             const updatedQtyRemoved = state.totalQty - action.payload.qty;
+            const updatedTotalRemoved = state.totalPrice - (action.payload.qty * action.payload.price)
             return {
                 ...state,
                 cart: updatedCart,
-                totalQty: updatedQtyRemoved
+                totalQty: updatedQtyRemoved,
+                totalPrice: updatedTotalRemoved
             }
         case actionTypes.CHECKOUT:
             return initialState;
