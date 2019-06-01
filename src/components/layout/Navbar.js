@@ -45,13 +45,15 @@ const styles = makeStyles(theme => ({
         color: '#fff',
         textDecoration: 'none',
         '&:hover': {
-            color: '#ffff00'
+            color: '#87b5ff'
         }
     },
 }));
 
 const Navbar = (props) => {
+    
     const classes= styles();
+
     return(
         <div className={classes.root}>
             <AppBar position="fixed" className={classes.navbar}>

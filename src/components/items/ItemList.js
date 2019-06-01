@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/styles'
 import { Grid } from '@material-ui/core'
 import Item from './Item';
 
-const styles = makeStyles(theme => ({
+const styles = makeStyles(({
     wrapper: {
         marginLeft: '10%',
         marginRight: '10%',

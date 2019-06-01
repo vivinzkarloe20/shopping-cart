@@ -2,43 +2,36 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, MenuItem, Select, Typography } from '@material-ui/core';
-import { createMuiTheme } from '@material-ui/core/styles'
+import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Grid, MenuItem, Select, Typography } from '@material-ui/core';
 import ShoppingCart from '@material-ui/icons/ShoppingCart'
 import { makeStyles } from '@material-ui/styles';
 import * as actionCreators from '../../store/actions/index';
 
-const theme = createMuiTheme({
-    spacing: 2
-})
-
-const styles = makeStyles(({
-    cardContent: {
-        display: 'flex',
-    },
-    cardActions: {
-        marginLeft: '10px',
-    },
-    select: {
-        // width: 'auto',
-        height: 'auto',
-        margin: theme.spacing(4),
-    },
-    cardItem: {
-        margin: '10px'
-    }
-}));
-
-const qty = [];
-
-for(let i = 1; i <= 5; i++){
-    qty.push({label: i, value: i});
-}
 
 const Item = props => {
     const [ amount, setAmount ] = useState(0);
-    const  {item } = props;
+    const  { item } = props;
+    
+    const styles = makeStyles(({
+        cardActions: {
+            display: 'flex',
+            marginLeft: '10px',
+        },
+        grouped: {
+            marginLeft: 'auto',
+        },
+        cardItem: {
+            margin: '10px'
+        },
+    }));
+
     const classes = styles();
+    
+    const qty = [];
+    
+    for(let i = 1; i <= 5; i++){
+        qty.push({label: i, value: i});
+    }
 
     const handleChange = e => {
         setAmount(e.target.value)
@@ -47,6 +40,10 @@ const Item = props => {
     return(
         <Grid item md={3} sm={6}>
             <Card className={classes.cardItem}>
+                <CardHeader
+                    title={item.name}
+                    subheader={'$ ' + item.price}
+                />
                 <CardActionArea>
                     <Link to={`shopping-cart/item/${item.id}`}>
                         <CardMedia 
@@ -59,16 +56,14 @@ const Item = props => {
                     </Link>
                 </CardActionArea>
                 <CardContent>
-                    <Typography variant="h5" component="h2">
-                        {item.name}
-                    </Typography>
-                    <Typography component="p">
-                        ${item.price}
+                    <Typography>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, tenetur.
                     </Typography>
                 </CardContent>
-                <div className={classes.cardContent}>
-                    <CardActions className={classes.cardActions}>
+                <CardActions className={classes.cardActions}>
+                    <div className={classes.grouped}>
                         <Select
+                            autoWidth="true"
                             className={classes.select}
                             label="Qty"
                             value={amount}
@@ -80,15 +75,15 @@ const Item = props => {
                                 </MenuItem>
                             ))}
                         </Select>
-                        <Button size="small" color="primary" onClick={() => {
+                        <Button className={classes.AddToCartBtn} size="small" color="primary" onClick={() => {
                             props.onAddItemToCart(item, amount);
                             setAmount(0);
                             }}>
                             <ShoppingCart/>
                             Add to Cart 
                         </Button>
-                    </CardActions>
-                </div>
+                    </div>
+                </CardActions>
             </Card>
         </Grid>
     );
