@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { makeStyles } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles'
-import { Button, Fab, Grid, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core'
+import { Fab, Grid, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core'
 import Clear from '@material-ui/icons/Clear'
 import * as actionCreators from '../../store/actions/index';
 

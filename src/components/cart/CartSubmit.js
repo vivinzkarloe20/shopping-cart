@@ -38,7 +38,7 @@ const CartSubmit = (props) => {
 
     const handleSubmit = () => {
         if(cartCheckout.totalQty > 0) {
-            props.history.push('/shopping-cart');
+            props.history.push('/');
             alert('You have successfully checked out! Thanks for shopping.');
             props.checkout();
         }else{

@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/styles';
 import * as actionCreators from '../../store/actions/index';
 
 
+
 const Item = props => {
     const [ amount, setAmount ] = useState(0);
     const  { item } = props;
@@ -38,19 +39,19 @@ const Item = props => {
     }
 
     return(
-        <Grid item md={3} sm={6}>
+        <Grid item md={4} sm={6}>
             <Card className={classes.cardItem}>
                 <CardHeader
                     title={item.name}
-                    subheader={'$ ' + item.price}
+                    subheader={'$ ' + item.price.toFixed(2)}
                 />
                 <CardActionArea>
-                    <Link to={`shopping-cart/item/${item.id}`}>
+                    <Link to={`/item/${item.id}`}>
                         <CardMedia 
                             component="img"
                             alt="image"
-                            height="140"
-                            image="https://dummyimage.com/250x250/858585/fff"
+                            height="250"
+                            image={require('./assets/'+ item.name + '.jpg')}
                             title="sample image"
                         />
                     </Link>
@@ -63,7 +64,6 @@ const Item = props => {
                 <CardActions className={classes.cardActions}>
                     <div className={classes.grouped}>
                         <Select
-                            autoWidth="true"
                             className={classes.select}
                             label="Qty"
                             value={amount}

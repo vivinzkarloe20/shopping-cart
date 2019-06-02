@@ -20,7 +20,7 @@ const Cart = () => {
         <Grid container spacing={5} className={classes.wrapper}>
             <CartSummary/>
             <CartSubmit />
-            <Link to="/shopping-cart">
+            <Link to="/">
                 <BackButton />
             </Link>
         </Grid>

@@ -58,11 +58,11 @@ const Navbar = (props) => {
         <div className={classes.root}>
             <AppBar position="fixed" className={classes.navbar}>
                 <Toolbar>
-                    <Link to="/shopping-cart" className={classes.link}>
+                    <Link to="/" className={classes.link}>
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>Shopping Cart</Typography>
                     </Link>
                     <div className={classes.grow} />
-                    <Link to="/shopping-cart/cart" className={classes.link}>
+                    <Link to="/cart" className={classes.link}>
                         <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
                             <Badge badgeContent={props.cartCount} color="secondary">
                                 <ShoppingCart />

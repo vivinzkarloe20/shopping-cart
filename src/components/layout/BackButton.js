@@ -17,7 +17,7 @@ const BackButton = () => {
     const classes = styles();
 
     return (
-        <Fab color="secondary" className={classes.backButton}>
+        <Fab color="primary" className={classes.backButton}>
             <ArrowBack/>
         </Fab>
     )
