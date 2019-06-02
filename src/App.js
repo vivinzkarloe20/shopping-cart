@@ -15,9 +15,9 @@ const App = () => {
             <CssBaseline />
             <Grid container>
                 <Switch>
-                    <Route exact path="/" component={ItemList}></Route>
-                    <Route exact path="/item/:id" component={ItemInfo}></Route>
-                    <Route exact path="/cart" component={Cart}></Route>
+                    <Route exact path="/shop" component={ItemList}></Route>
+                    <Route exact path="/shop/item/:id" component={ItemInfo}></Route>
+                    <Route exact path="/shop/cart" component={Cart}></Route>
                 </Switch>
             </Grid>
         </Router>

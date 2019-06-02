@@ -51,7 +51,7 @@ const ItemInfo = (props) => {
     
     return (
         <React.Fragment>
-            <Link to="/">
+            <Link to="/shop">
                 <BackButton />
             </Link>
             <Grid container className={classes.wrapper}>

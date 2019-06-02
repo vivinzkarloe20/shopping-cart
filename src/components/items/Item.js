@@ -46,7 +46,7 @@ const Item = props => {
                     subheader={'$ ' + item.price.toFixed(2)}
                 />
                 <CardActionArea>
-                    <Link to={`/item/${item.id}`}>
+                    <Link to={`/shop/item/${item.id}`}>
                         <CardMedia 
                             component="img"
                             alt="image"
