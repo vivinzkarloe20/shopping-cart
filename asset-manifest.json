@@ -1,13 +1,24 @@
 {
   "files": {
-    "main.js": "/shopping-cart/static/js/main.ce965fa1.chunk.js",
-    "main.js.map": "/shopping-cart/static/js/main.ce965fa1.chunk.js.map",
+    "main.js": "/shopping-cart/static/js/main.e911d106.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.e911d106.chunk.js.map",
     "runtime~main.js": "/shopping-cart/static/js/runtime~main.60a85d2f.js",
     "runtime~main.js.map": "/shopping-cart/static/js/runtime~main.60a85d2f.js.map",
-    "static/js/2.89bb4626.chunk.js": "/shopping-cart/static/js/2.89bb4626.chunk.js",
-    "static/js/2.89bb4626.chunk.js.map": "/shopping-cart/static/js/2.89bb4626.chunk.js.map",
+    "static/js/2.43152e40.chunk.js": "/shopping-cart/static/js/2.43152e40.chunk.js",
+    "static/js/2.43152e40.chunk.js.map": "/shopping-cart/static/js/2.43152e40.chunk.js.map",
     "index.html": "/shopping-cart/index.html",
-    "precache-manifest.acaba0c8a389e2d07bf8142da9c4d12f.js": "/shopping-cart/precache-manifest.acaba0c8a389e2d07bf8142da9c4d12f.js",
-    "service-worker.js": "/shopping-cart/service-worker.js"
+    "precache-manifest.4085de84487f7609d58140d72be66bd0.js": "/shopping-cart/precache-manifest.4085de84487f7609d58140d72be66bd0.js",
+    "service-worker.js": "/shopping-cart/service-worker.js",
+    "static/media/Asus ROG STRIX B450-F GAMING.jpg": "/shopping-cart/static/media/Asus ROG STRIX B450-F GAMING.25072910.jpg",
+    "static/media/Cooler Master MasterBox Q300.jpg": "/shopping-cart/static/media/Cooler Master MasterBox Q300.2c97e484.jpg",
+    "static/media/Corsair CXM.jpg": "/shopping-cart/static/media/Corsair CXM.72e3431a.jpg",
+    "static/media/EVGA GeForce GTX 1070.jpg": "/shopping-cart/static/media/EVGA GeForce GTX 1070.bff32dfc.jpg",
+    "static/media/EVGA SuperNOVA G3.jpg": "/shopping-cart/static/media/EVGA SuperNOVA G3.a7657661.jpg",
+    "static/media/G.Skill Trident Z RGB 16 GB.jpg": "/shopping-cart/static/media/G.Skill Trident Z RGB 16 GB.4d87d7cb.jpg",
+    "static/media/Intel Core i7-8700K.jpg": "/shopping-cart/static/media/Intel Core i7-8700K.516728fc.jpg",
+    "static/media/Intel Core i9-9900K.jpg": "/shopping-cart/static/media/Intel Core i9-9900K.aeb9c6ff.jpg",
+    "static/media/MSI Gaming X GeForce GTX 1080 Ti.jpg": "/shopping-cart/static/media/MSI Gaming X GeForce GTX 1080 Ti.787189ad.jpg",
+    "static/media/Seagate Barracuda.jpg": "/shopping-cart/static/media/Seagate Barracuda.6d7d8058.jpg",
+    "static/media/Western Digital Caviar Blue.jpg": "/shopping-cart/static/media/Western Digital Caviar Blue.20579ffc.jpg"
   }
 }
